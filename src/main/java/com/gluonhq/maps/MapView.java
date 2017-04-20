@@ -76,7 +76,7 @@ public class MapView extends Region {
                 // we will set the center to a slightly different location first, in order 
                 // to trigger the invalidationListeners.
                 setCenter(centerPoint.getLatitude()+.00001, centerPoint.getLongitude()+.00001);
-                setCenter(centerPoint);
+                setCenter(centerPoint.getLatitude()-.00001, centerPoint.getLongitude()-.00001);
             }
         });
     }
