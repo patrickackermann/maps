@@ -98,9 +98,9 @@ public class MapView extends Region {
         });
         setOnZoomStarted(t -> zooming = true);
         setOnZoomFinished(t -> zooming = false);
-        setOnZoom(t -> baseMap.zoom(t.getZoomFactor() - 1, t.getX(), t.getY()));
+        setOnZoom(t -> baseMap.zoom(t.getZoomFactor() - 1, getLayoutBounds().getWidth() / 2, getLayoutBounds().getHeight() / 2));
         if (Platform.isDesktop()) {
-            setOnScroll(t -> baseMap.zoom(t.getDeltaY() > 1 ? .1 : -.1, t.getX(), t.getY()));
+            setOnScroll(t -> baseMap.zoom(t.getDeltaY() > 1 ? .1 : -.1, getLayoutBounds().getWidth() / 2, getLayoutBounds().getHeight() / 2));
         }
     }
 
