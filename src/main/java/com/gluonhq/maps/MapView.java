@@ -112,6 +112,8 @@ public class MapView extends Region {
      * @param zoom the requested zoom level
      */
     public void setZoom(double zoom) {
+        // trigger the invalidation listener
+        baseMap.setZoom(zoom + .00001);
         baseMap.setZoom(zoom);
     }
 
@@ -149,6 +151,8 @@ public class MapView extends Region {
      */
     public void setCenter(double lat, double lon) {
         this.centerPoint = new MapPoint(lat, lon);
+        // trigger the invalidation listeners
+        baseMap.setCenter(lat + .00001, lon + .00001);
         baseMap.setCenter(lat, lon);
     }
 
