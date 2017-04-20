@@ -37,6 +37,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Rectangle;
@@ -229,5 +230,13 @@ public class MapView extends Region {
         // update clip
         clip.setWidth(w);
         clip.setHeight(h);
+    }
+
+    public ReadOnlyDoubleProperty centerLatProperty() {
+        return baseMap.centerLat();
+    }
+
+    public ReadOnlyDoubleProperty centerLonProperty() {
+        return baseMap.centerLon();
     }
 }
